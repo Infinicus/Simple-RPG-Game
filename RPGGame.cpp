@@ -4,7 +4,7 @@ using namespace std;
 
 void menu()
 {
-    
+    cout << "What do you want to do?" << endl;
 }
 
 void printBorder()

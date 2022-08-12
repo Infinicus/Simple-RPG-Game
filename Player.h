@@ -8,6 +8,7 @@ class Player{
     private:
         std::string name = "Traveler";
         int health = 100;
+        std::string role = "Warrior";
         int attack = 1;
         int defense = 1;
         int speed = 1;
@@ -19,8 +20,8 @@ class Player{
 
     public:
         Player();
-        Player(std::string, int, int, int, int, int, int, int, int, bool);
         void setName(std::string);
+        void setRole(std::string);
         void setHealth(int);
         void setAttack(int);
         void setDefense(int);
@@ -32,6 +33,7 @@ class Player{
         void setGender(bool);
 
         std::string getName();
+        std::string getRole();
         int getHealth();
         int getAttack();
         int getDefense();
@@ -44,6 +46,7 @@ class Player{
 
         void promptName();
         void promptGender();
+        void promptRole();
 
         void levelUp();
         void addExp(int);

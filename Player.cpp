@@ -3,22 +3,13 @@
 Player::Player(){
     
 }
-Player::Player(std::string name, int health, int attack, int defense, int speed, int level, int exp, int expToLevel, int money, bool gender){
-    Player::name = name;
-    Player::health = health;
-    Player::attack = attack;
-    Player::defense = defense;
-    Player::speed = speed;
-    Player::level = level;
-    Player::exp = exp;
-    Player::expToLevel = expToLevel;
-    Player::money = money;
-    Player::gender = gender;
-    printf("Player created\n");
-}
 
+//Section for setting player stats
 void Player::setName(std::string name){
     Player::name = name;
+}
+void Player::setRole(std::string role){
+    Player::role = role;
 }
 void Player::setHealth(int health){
     Player::health = health;
@@ -49,18 +40,26 @@ void Player::setGender(bool gender)
     Player::gender = gender;
 }
 
+//Section for getting player stats
 void Player::promptName(){
-    printf("What is your name? ");
+    printf("What is your name?: ");
     std::cin >> Player::name;
 }
 void Player::promptGender(){
     printf("What is your gender? (0 for Male, 1 for Female): ");
-    std:: cin >> Player::gender;
+    std::cin >> Player::gender;
+}
+void Player::promptRole(){
+    printf("What is your Role? (Warrior/Assassin/Paladin): ");
+    std::cin >> Player::role;
 }
 
-
+//Section for getting player stats
 std::string Player::getName(){
     return Player::name;
+}
+std::string Player::getRole(){
+    return Player::role;
 }
 int Player::getHealth(){
     return Player::health;
@@ -95,6 +94,7 @@ char Player::getGender(){
     }
 }
 
+//Stats Modifiers
 void Player::levelUp(){
     Player::level++;
     Player::expToLevel += 100;
